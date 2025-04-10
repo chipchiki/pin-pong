@@ -24,3 +24,20 @@ class Player(GameSprite):
         bullets.add(bullet)
         mixer.music.load('babax.ogg')
         mixer.music.play(-1)
+
+width = 500
+height = 500
+
+window = display.set_mode((width,height))
+window.fill((0,0,0))
+clock = time.Clock()
+FPS = 60
+
+start = True
+
+while start == True:
+    for e in event.get():
+        if e.type == QUIT:
+            start = False
+    display.update()
+    clock.tick(FPS)
